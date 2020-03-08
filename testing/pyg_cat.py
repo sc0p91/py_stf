@@ -6,37 +6,44 @@ from pygame.locals import *
 
 pygame.init()
 
-FPS = 30
+FPS = 60
 fpsClock = pygame.time.Clock()
 
+orange = (240, 100, 40)
+catImg = pygame.image.load('cat.png')
+catx = 10
+caty = 10
+direction = 'right'
+
 DISPLAYSURF = pygame.display.set_mode((400, 300), 0, 32)
-DISPLAYSURF.fill(orange)
 pygame.display.set_caption('Catty McCatface')
 
-catImg = pygame.image.load('cat.png')
-
-pygame.draw.polygon(DISPLAYSURF, blue, ((146, 0), (291, 106), (236, 277),(56, 277), (0, 106)))
-pygame.draw.rect(DISPLAYSURF, green, (50, 60, 100, 100))
-
-
 while True:
+
+    DISPLAYSURF.fill(orange)
+    if direction == 'right':
+        catx += 5
+        if catx == 320:
+            direction = 'down'
+    elif direction == 'down':
+        caty +=5
+        if caty == 220:
+            direction = 'left'
+    elif direction == 'left':
+        catx -= 5
+        if catx == 10:
+            direction = 'up'
+    elif direction == 'up':
+        caty -=5 
+        if caty == 10:
+                direction = 'right'
+
+    DISPLAYSURF.blit(catImg, (catx, caty))
+
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
-    pygame.display.update()
 
-    if event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_LEFT:
-            pygame.time.delay(10)
-            baseh -= 1
-        if event.key == pygame.K_RIGHT:
-            pygame.time.delay(10)
-            baseh += 1
-        if event.key == pygame.K_UP:
-            pygame.time.delay(10)
-            basev -= 1
-        if event.key == pygame.K_DOWN:
-            pygame.time.delay(10)
-            basev += 1
-    pygame.draw.rect(DISPLAYSURF, aqua, (baseh, basev, 10, 10))
+    pygame.display.update()
+    fpsClock.tick(FPS)
