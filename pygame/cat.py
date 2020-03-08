@@ -10,7 +10,7 @@ FPS = 60
 fpsClock = pygame.time.Clock()
 
 orange = (240, 100, 40)
-catImg = pygame.image.load('cat.png')
+catImg = pygame.image.load('files/cat.png')
 catx = 10
 caty = 10
 direction = 'right'
