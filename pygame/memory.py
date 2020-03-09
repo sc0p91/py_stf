@@ -11,8 +11,8 @@ from pygame.locals import *
 FPS = 30
 winwidth = 640
 winheight = 480
-boardwidth = 10
-boardheight = 7
+boardwidth = 3
+boardheight = 4
 revealspeed = 8
 boxsize = 40
 gapsize = 10
@@ -82,7 +82,8 @@ def main():
         drawBoard(mainBoard, revealedBoxes)
 
         for event in pygame.event.get():
-            if event.type == QUIT or (event.type == KEYUP and event.key == K_ESCAPE):
+            if event.type == QUIT or (event.type == KEYUP and event.key == K_ESCAPE) or (event.type == KEYUP and event.key == K_q):
+                pygame.display.quit()
                 pygame.quit()
                 sys.exit()
             elif event.type == MOUSEMOTION:
