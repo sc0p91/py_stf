@@ -28,10 +28,7 @@ class email:
         body = 'No SIM in tray'
 
 # "Send Mail" - write it to the log
-if True:
-    log.write("send mail " + header + " body: " + email.body + "\n")
-else:
-    log.write("send mail " + header + " body: " + email.body + "\n")
+log.write("send mail " + header + " body: " + email.body + "\n")
 
 log.close()
 
