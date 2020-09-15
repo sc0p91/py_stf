@@ -1,4 +1,17 @@
 #!/usr/bin/python3
+import os.path
+
+# Define Logfile 
+logpath = 'pymail.log'
+
+# Check if Logfile is present
+if os.path.isfile(logpath):
+    # Open file in append-mode
+    log = open(logpath, "a")
+else:
+    # Create file 
+    log = open(logpath, "w+")
+    log.write("Creating new File!\n")
 
 # Define generic Mail Settings 
 user = 'bli'
@@ -14,9 +27,11 @@ class email:
     else:
         body = 'No SIM in tray'
 
-# Send Mail
+# "Send Mail" - write it to the log
 if True:
-    print("send mail " + header + " body: " + email.body)
+    log.write("send mail " + header + " body: " + email.body + "\n")
 else:
-    print("send mail " + header + " body: " + email.body)
+    log.write("send mail " + header + " body: " + email.body + "\n")
+
+log.close()
 
