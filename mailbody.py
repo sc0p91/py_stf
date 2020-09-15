@@ -4,20 +4,19 @@
 user = 'bli'
 passwd = 'bla'
 header = 'To: bla From:' + user
+global body 
 
 # Set approriate Mail Body
 class email:
-    @staticmethod
-    def withsim():
+    # When SIM is present
+    if True:
         body = 'Automatic SIM Update Finished'
-
-    def withoutsim():
+    else:
         body = 'No SIM in tray'
 
 # Send Mail
 if True:
-    email.withsim()
+    print("send mail " + header + " body: " + email.body)
 else:
-    email.withoutsim()
+    print("send mail " + header + " body: " + email.body)
 
-print("send mail " + header)
