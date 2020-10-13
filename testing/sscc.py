@@ -21,13 +21,13 @@ def main(argv):
                 input = sys.argv[2:]
                 for i in input:
                     searchterm.append(str(i))
-                print 'searching for: ', searchterm
+                print ('searching for: ', searchterm)
         else:
             about()
 
 
 def about():
-    print './sscc.py -s <searchterm(s)> or -a for everything'
+    print ('./sscc.py -s <searchterm(s)> or -a for everything')
     sys.exit()
 
 if __name__ == "__main__":
