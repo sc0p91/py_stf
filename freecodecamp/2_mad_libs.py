@@ -1,16 +1,29 @@
 #!/usr/bin/python3
 
-# SAMPLE TEXT
-#Today I went to the zoo. I saw a(n)
-#___________(adjective)
-#_____________(Noun) jumping up and down in its tree.
-#He _____________(verb, past tense) __________(adverb)
-#through the large tunnel that led to its _______(adjective)
-#__________(noun). I got some peanuts and passed
-#them through the cage to a gigantic gray _______(noun)
-#towering above my head. Feeding that animal made
-#me hungry. I went to get a __________(adjective) scoop
-#of ice cream. It filled my stomach. Afterwards I had to
-#__________(verb) __________ (adverb) to catch our bus.
-#When I got home I __________(verb, past tense) my
-#mom for a __________(adjective) day at the zoo.
+
+print("Welcome to swan's supra adventure")
+a = input("Insert an adjective: ")
+b = input("Insert a noun: ")
+c = input("Insert a verb (past tense): ")
+d = input("Insert an adverb: ")
+e = input("Insert an adjective: ")
+f = input("Insert a noun: ")
+g = input("Insert a noun: ")
+h = input("Insert an adjective: ")
+i = input("Insert a verb: ")
+j = input("Insert an adverb: ")
+k = input("Insert a verb (past tense): ")
+l = input("Insert an adjective: ")
+
+print(f"Today I went to the zoo. I saw a(n) {a}")
+print(f"{b} jumping up and down in its tree.")
+print(f"He {c} {d}")
+print(f"through the large tunnel that led to its {e}")
+print(f"{f}. I got some peanuts and passed")
+print(f"them through the cage to a gigantic gray {g}")
+print(f"towering above my head. Feeding that animal made")
+print(f"me hungry. I went to get a {h} scoop")
+print(f"of ice cream. It filled my stomach. Afterwards I had to")
+print(f"{i} {j} to catch our bus.")
+print(f"When I got home I {k} my")
+print(f"mom for a {l} day at the zoo.")
