@@ -119,6 +119,6 @@ while running:
     if player.rect.colliderect(end_rect):
         pygame.display.quit()
         pygame.quit()
-        sys.exit()
+        quit()
 
         
