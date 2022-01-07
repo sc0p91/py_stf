@@ -4,6 +4,7 @@ import pygame, time, random
 
 pygame.init()
 
+# VARIABLES
 white =     (255, 255, 255)
 black =     (0, 0, 0)
 blue =      (0, 178, 169)
