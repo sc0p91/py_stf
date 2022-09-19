@@ -5,7 +5,7 @@ from PIL import Image
 
 # Vars
 i = 0
-anz = 1 
+anz = 500
 dudes = []
 generator = True
 head = Image.open("img/head.png")
@@ -43,33 +43,21 @@ def randomizer():
     workdude = [hat_image, shirt_image, smoke_image]
     return workdude
 
+while generator:
+    dude = (randomizer())
+    i += 1
 
-for i in range(200):
-   
-    # Just do them for now - without checking for dubs
-    dude = randomizer()
+    if dude not in dudes:
+        dudes.append(dude)
+        new_image = Image.new('RGBA',(32, 32), (250,250,250,0))
+        new_image.paste(head,(0,0))
+        new_image.paste(dude[0],(0,0),dude[0])
+        new_image.paste(dude[1],(0,0),dude[1])
+        new_image.paste(dude[2],(0,0),dude[2])
+        new_image.save("img/test/dude{}.png".format(i))
 
-    new_image = Image.new('RGBA',(32, 32), (250,250,250,0))
-    new_image.paste(head,(0,0))
-    new_image.paste(dude[0],(0,0),dude[0])
-    new_image.paste(dude[1],(0,0),dude[1])
-    new_image.paste(dude[2],(0,0),dude[2])
-    
-    new_image.save("img/test/dude{}.png".format(i))
+        if len(dudes) == anz:
+            print("{} ungerschidlechi dudes generiert".format(anz))
+            print("und es het nume {} Iteratione brucht :)".format(i))
+            generator=False
 
-#while generator:
-#    dude = (randomizer())
-#    i += 1
-#    print("Iter:{} - Dude:{}".format(i,dude))
-#    print("längi: {}".format(len(dudes)))
-#    if dude not in dudes:
-#        dudes.append(dude)
-#        if len(dudes) == anz:
-#            print("Do si {} ungerschidlechi dudes: {}".format(anz,dudes))
-#            generator=False
-#    else:
-#        print("Dude: {} found in {}".format(dude,dudes))
-
-#print("Und es het nume {} Iteratione brucht :)".format(i))
-#print("This is guy #420: {}".format(dudes[420]))
-#print("lenth of dudes: {}".format(len(dudes)))
