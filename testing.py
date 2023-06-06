@@ -1,3 +1,3 @@
 # hallo
 
-print("mergeconflik LOL")
+print("merge not!")
